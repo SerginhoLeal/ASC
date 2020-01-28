@@ -4,7 +4,12 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-mongoose.connect('mongodb+srv://asc:96321458xz@cluster0-hah9i.mongodb.net/test?retryWrites=true&w=majority');
+mongoose.connect(
+    process.env.MONGO_URL,
+    {
+        useNewUrlParser: true
+    }
+);
 
 const app = express();
 
@@ -14,4 +19,4 @@ app.use(bodyParser.json());
 
 app.use(route);
 
-app.listen(process.env.PORT || 3000);
+app.listen(3000);
