@@ -4,12 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-mongoose.connect(
-    process.env.MONGO_URL,
-    {
-        useNewUrlParser: true
-    }
-);
+mongoose.connect('mongodb://localhost/Games');
 
 const app = express();
 
